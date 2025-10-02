@@ -1,0 +1,12 @@
+﻿# Pastas binárias e de compilação
+[Bb]in/
+[Oo]bj/
+
+# Ignorar a pasta .vs (que contém o FileContentIndex)
+.vs/
+
+# Ignorar arquivos temporários do usuário/configuração
+*.suo
+*.user
+*.pdb
+
