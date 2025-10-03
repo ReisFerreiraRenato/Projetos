@@ -1,6 +1,6 @@
 ﻿namespace WpfApp.Models
 {
-    public class ItemPedido
+    public class ItensPedido
     {
         // 1. Id - int - chave primária da tabela ItemPedido Gerenciado Externamente
         public int ItemPedido_Id { get; init; }

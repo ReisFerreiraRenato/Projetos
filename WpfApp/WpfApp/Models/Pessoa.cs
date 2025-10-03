@@ -3,7 +3,7 @@
     public class Pessoa
     {
         // 1. Id - int - chave primária da tabela Pessoa Gerenciado Externamente
-        public int Id { get; init; }
+        public int Pessoa_Id { get; init; }
 
         // 2. Nome - string - nome da pessoa (obrigatório)
         public string Nome { get; set; } = default!;

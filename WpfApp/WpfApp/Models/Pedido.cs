@@ -13,8 +13,8 @@ namespace WpfApp.Models
         // Prpriedade de navegação para Pessoa
         public Pessoa? Pessoa { get; set; } = default!;
 
-        // 3. Produtos - Lista de Produtos - lista de produtos associados ao pedido (obrigatório)
-        public List<Produto> Produtos { get; set; } = new List<Produto>();
+        // 3. Produtos - Lista de ItenmPedido - lista de produtos associados ao pedido (obrigatório)
+        public List<ItensPedido> ItensPedido { get; set; } = [];
 
         // 4. ValorTotal - decimal - valor total do pedido (obrigatório)
         public decimal ValorTotal { get; set; }
