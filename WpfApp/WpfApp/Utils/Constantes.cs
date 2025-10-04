@@ -17,6 +17,8 @@
         public const string ErroCPFJaCadastrado = "CPF já cadastrado.";
         public const string ErroNomeObrigatorio = "Nome é obrigatório.";
         public const string ErroCPFObrigatorio = "CPF é obrigatório.";
+        public const string ErroCPFInvalido = "CPF inválido.";
+        public const string ErroPessoaNula = "Dados da pessoa nulo.";
 
         // Erros manipulacao produtos
         public const string ErroProdutoNaoEncontrado = "Produto não encontrado.";
@@ -38,6 +40,11 @@
         public const string ErroAtualizacaoStatusInvalida = "Atualização de status inválida.";
         public const string ErroRemocaoPedidoComStatusFinalizado = "Pedidos finalizados ou cancelados não podem ser removidos.";
         public const string ErroAtualizacaoPedidoComStatusFinalizado = "Pedidos finalizados ou cancelados não podem ser atualizados.";
-        
+        public const string ErroDataVendaInvalida = "Data da venda inválida.";
+
+        // Erros manipulacao itens pedido
+        public const string ErroItensPedidoNaoEncontrado = "Item do pedido não encontrado.";
+        public const string ErroQuantidadeInvalida = "A quantidade deve ser maior que zero.";
+        public const string ErroPrecoTotalItemInvalido = "O preço total do item deve ser maior que zero.";
     }
 }
