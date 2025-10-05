@@ -1,4 +1,5 @@
-﻿using WpfApp.Utils;
+﻿using System.Collections.ObjectModel;
+using WpfApp.Utils;
 
 namespace WpfApp.Models
 {
@@ -14,7 +15,7 @@ namespace WpfApp.Models
         public Pessoa? Pessoa { get; set; } = default!;
 
         // 3. Produtos - Lista de ItenmPedido - lista de produtos associados ao pedido (obrigatório)
-        public List<ItensPedido> ItensPedido { get; set; } = [];
+        public ObservableCollection<ItensPedido> ItensPedido { get; set; } = [];
 
         // 4. ValorTotal - decimal - valor total do pedido (obrigatório)
         public decimal ValorTotal { get; set; }

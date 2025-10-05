@@ -26,6 +26,7 @@
         public const string ErroPrecoProdutoInvalido = "Preço do produto deve ser maior que zero.";
         public const string ErroQuantidadeProdutoInvalida = "Quantidade do produto não pode ser negativa.";
         public const string ErroProdutoEmUso = "Produto está associado a um pedido e não pode ser removido.";
+        public const string ErroDescricaoObrigatoria = "Descrição é obrigatória.";
 
         //public const string ErroEstoqueInsuficiente = "Estoque insuficiente para o produto.";
         //public const string ErroAtualizacaoEstoqueProduto = "Não foi possível atualizar o estoque do produto.";
@@ -46,5 +47,11 @@
         public const string ErroItensPedidoNaoEncontrado = "Item do pedido não encontrado.";
         public const string ErroQuantidadeInvalida = "A quantidade deve ser maior que zero.";
         public const string ErroPrecoTotalItemInvalido = "O preço total do item deve ser maior que zero.";
+
+        // Erros de ação
+        public const string ErroAcaoExecucaoInvalida = "A ação de execução não pode ser nula.";
+
+        // Erros de extensões
+        public const string ErroTipoEnum = "O tipo fornecido deve ser um enum.";
     }
 }

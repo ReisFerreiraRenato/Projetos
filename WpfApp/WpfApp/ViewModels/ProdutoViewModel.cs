@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 
 namespace WpfApp.ViewModels
 {
-    public class ProdutoViewModels(Produto produto) : INotifyPropertyChanged
+    public class ProdutoViewModel(Produto produto) : INotifyPropertyChanged
     {
         private readonly Produto _produto = produto ?? throw new ArgumentNullException(nameof(produto), Constantes.ErroProdutoNaoEncontrado);
 

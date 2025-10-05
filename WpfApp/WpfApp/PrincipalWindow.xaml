@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<Window x:Class="WpfApp.PrincipalView"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       xmlns:vms="clr-namespace:WpfApp.ViewModels"
+       mc:Ignorable="d"
+       Title="WpfApp - ERP" Height="768" Width="1024">
+
+    <d:DesignData.DataContext>
+        <vms:PrincipalViewModel/>
+    </d:DesignData.DataContext>
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Cadastros">
+                <MenuItem Header="_Pessoas" Command="{Binding NavigatePessoasCommand}"/>
+                <MenuItem Header="_Produtos" Command="{Binding NavigateProdutosCommand}"/>
+                <MenuItem Header="Pe_didos" Command="{Binding NavigatePedidosCommand}"/>
+                <Separator/>
+                <MenuItem Header="S_air" Command="{Binding SairCommand}"/>
+            </MenuItem>
+            <MenuItem Header="_Editar">
+                <MenuItem Header="_Desfazer" Command="{Binding DesfazerCommand}"/>
+                <MenuItem Header="_Refazer" Command="{Binding RefazerCommand}"/>
+            </MenuItem>
+            <MenuItem Header="_Ajuda">
+                <MenuItem Header="_Sobre" Command="{Binding SobreCommand}"/>
+            </MenuItem>
+        </Menu>
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar>
+                <Button Content="Pessoas" Command="{Binding NavigatePessoasCommand}" ToolTip="Cadastro de Pessoas"/>
+                <Button Content="Produtos" Command="{Binding NavigateProdutosCommand}" ToolTip="Cadastro de Produtos"/>
+                <Button Content="Pedidos" Command="{Binding NavigatePedidosCommand}" ToolTip="Cadastro de Pedidos"/>
+                <Separator/>
+                <Button Content="Desfazer" Command="{Binding DesfazerCommand}" ToolTip="Desfazer a última ação"/>
+                <Button Content="Refazer" Command="{Binding RefazerCommand}" ToolTip="Refazer a última ação desfeita"/>
+            </ToolBar>
+        </ToolBarTray>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem Content="{Binding StatusMessage}" HorizontalAlignment="Left"/>
+            <StatusBarItem Content="{Binding CurrentTime}" HorizontalAlignment="Right"/>
+        </StatusBar>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="342*"/>
+                <RowDefinition Height="191*"/>
+            </Grid.RowDefinitions>
+                <ContentControl Content="{Binding CurrentView}" Margin="10"/>
+        </Grid>
+    </DockPanel>
+
+</Window>
