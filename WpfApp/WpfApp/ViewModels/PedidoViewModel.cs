@@ -41,20 +41,9 @@ namespace WpfApp.ViewModels
         // ** MÉTODO AUXILIAR PARA ATUALIZAR O ESTADO DOS BOTÕES **
         private void RaiseCommandsCanExecute()
         {
-            // O erro 'RaiseCanExecuteChanged' não acessa os dados da instância e pode ser marcado como estático'
-            // não deve aparecer aqui, mas sim na sua implementação do DelegateCommand.cs.
-            // Para ter certeza que estamos chamando o método correto:
             (AdicionarItemCommand as DelegateCommand)?.RaiseCanExecuteChanged();
             (RemoverItemCommand as DelegateCommand)?.RaiseCanExecuteChanged();
         }
-
-        /*
-        public PedidoViewModel(Pedido pedido) : this(pedido ?? throw new ArgumentNullException(nameof(pedido), Constantes.ErroPedidoNaoEncontrado))
-        {
-            AdicionarItemCommand = new DelegateCommand(o => AdicionarItem(), o => CanAdicionarItem());
-            RemoverItemCommand = new DelegateCommand(o => RemoverItem(), o => CanRemoverItem());
-            SalvarPedidoCommand = new DelegateCommand(o => SalvarPedido());
-        }*/
 
         // 1. Propriedades que refletem os campos do modelo Pedido
         public int Pedido_Id

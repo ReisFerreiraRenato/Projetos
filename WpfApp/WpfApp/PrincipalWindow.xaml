@@ -6,12 +6,18 @@
        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
        xmlns:vms="clr-namespace:WpfApp.ViewModels"
+       xmlns:views="clr-namespace:WpfApp.Views"
        mc:Ignorable="d"
-       Title="WpfApp - ERP" Height="768" Width="1024">
+       Title="WpfApp - ERP" Height="768" Width="1024"
+       d:DataContext="{d:DesignInstance vms:PrincipalViewModel, IsDesignTimeCreatable=True}">
+    
+    <Window.Resources>
 
-    <d:DesignData.DataContext>
-        <vms:PrincipalViewModel/>
-    </d:DesignData.DataContext>
+        <DataTemplate DataType="{x:Type vms:PedidoViewModel}">
+            <views:PedidoView />
+        </DataTemplate>
+
+    </Window.Resources>
 
     <DockPanel>
         <Menu DockPanel.Dock="Top">
@@ -49,7 +55,7 @@
                 <RowDefinition Height="342*"/>
                 <RowDefinition Height="191*"/>
             </Grid.RowDefinitions>
-                <ContentControl Content="{Binding CurrentView}" Margin="10"/>
+            <ContentControl Content="{Binding CurrentView}" Margin="10"/>
         </Grid>
     </DockPanel>
 

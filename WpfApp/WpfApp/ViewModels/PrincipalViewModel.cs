@@ -45,22 +45,22 @@ namespace WpfApp.ViewModels
         public void NavigateTo(object viewModel)
         {
             // Uso da propriedade para notificar a mudança
-            _currentView = viewModel;
+            CurrentView = viewModel;
         }
 
         private void NavigateToPessoas()
         {
-            _currentView = new PessoaViewModel(new Models.Pessoa());
+            CurrentView = new PessoaViewModel(new Models.Pessoa());
         }
 
         private void NavigateToProdutos()
         {
-            _currentView = new ProdutoViewModel(new Models.Produto());
+            CurrentView = new ProdutoViewModel(new Models.Produto());
         }
 
         private void NavigateToPedidos()
         {
-            _currentView = new PedidoViewModel(new Models.Pedido());
+            CurrentView = new PedidoViewModel(new Models.Pedido());
         }
 
         // aviso de mudança de propriedade

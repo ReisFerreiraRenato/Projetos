@@ -7,6 +7,7 @@
              xmlns:util="clr-namespace:WpfApp.Utils"
              xmlns:models="clr-namespace:WpfApp.Models"
              xmlns:local="clr-namespace:WpfApp.Views"
+             xmlns:views="clr-namespace:WpfApp.Views"
              xmlns:vms="clr-namespace:WpfApp.ViewModels"
              
              mc:Ignorable="d" 
