@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 
 namespace WpfApp.ViewModels
 {
-    public class ItensPedidoViewModel(ItensPedido itenspedido) : INotifyPropertyChanged
+    public class ItensPedidoViewModel(ItensPedido itenspedido) : ViewModelBase
     {
         private readonly ItensPedido _itenspedido = itenspedido ?? throw new ArgumentNullException(nameof(itenspedido), Constantes.ErroPessoaNula);
 
@@ -69,14 +69,6 @@ namespace WpfApp.ViewModels
                     OnPropertyChanged();
                 }
             }
-        }
-
-        // 2. Implementação do INotifyPropertyChanged
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

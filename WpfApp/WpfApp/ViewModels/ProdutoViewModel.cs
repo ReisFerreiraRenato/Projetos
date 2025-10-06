@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 
 namespace WpfApp.ViewModels
 {
-    public class ProdutoViewModel(Produto produto) : INotifyPropertyChanged
+    public class ProdutoViewModel(Produto produto) : ViewModelBase
     {
         private readonly Produto _produto = produto ?? throw new ArgumentNullException(nameof(produto), Constantes.ErroProdutoNaoEncontrado);
 
@@ -45,12 +45,5 @@ namespace WpfApp.ViewModels
             }
         }
 
-        // 2. Implementação do INotifyPropertyChanged
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }

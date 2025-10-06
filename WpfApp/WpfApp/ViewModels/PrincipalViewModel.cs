@@ -34,7 +34,7 @@ namespace WpfApp.ViewModels
         // carregar a tela inicial
         public PrincipalViewModel()
         {
-            _currentView = new PessoaViewModel(new Models.Pessoa());
+            _currentView = new PedidoViewModel(new Models.Pedido());
 
             NavigatePedidosCommand = new DelegateCommand(o => NavigateToPedidos());
             NavigatePessoasCommand = new DelegateCommand(o => NavigateToPessoas());
@@ -61,6 +61,8 @@ namespace WpfApp.ViewModels
         private void NavigateToPedidos()
         {
             CurrentView = new PedidoViewModel(new Models.Pedido());
+
+            OnPropertyChanged(nameof(CurrentView));
         }
 
         // aviso de mudança de propriedade

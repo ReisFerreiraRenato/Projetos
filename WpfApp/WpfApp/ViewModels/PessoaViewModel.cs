@@ -5,7 +5,7 @@ using WpfApp.Utils;
 
 namespace WpfApp.ViewModels
 {
-    public class PessoaViewModel(Pessoa pessoa) : INotifyPropertyChanged
+    public class PessoaViewModel(Pessoa pessoa) : ViewModelBase
     {
         private readonly Pessoa _pessoa = pessoa ?? throw new ArgumentNullException(nameof(pessoa), Constantes.ErroPessoaNula);
 
@@ -58,14 +58,6 @@ namespace WpfApp.ViewModels
                     OnPropertyChanged();
                 }
             }
-        }
-
-        // 2. Implementação do INotifyPropertyChanged
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

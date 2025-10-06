@@ -10,7 +10,7 @@ using System.Windows;
 
 namespace WpfApp.ViewModels
 {
-    public class PedidoViewModel(Pedido pedido) : INotifyPropertyChanged
+    public class PedidoViewModel(Pedido pedido) : ViewModelBase
     {
         private readonly Pedido _pedido = pedido ?? throw new ArgumentNullException(nameof(pedido), Constantes.ErroPedidoNaoEncontrado);
 
@@ -269,14 +269,6 @@ namespace WpfApp.ViewModels
                 // Limpa a seleção após remover o item
                 ItemPedidoSelecionado = null;
             }
-        }
-
-        // 2. Implementação do INotifyPropertyChanged
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
