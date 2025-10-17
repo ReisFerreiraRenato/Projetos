@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
+﻿using System.Windows;
 using System.Windows.Input;
-using System.Collections.ObjectModel;
 using WpfApp.Utils;
-using WpfApp.Models;
 
 namespace WpfApp.ViewModels
 {
-    public class PrincipalViewModel : INotifyPropertyChanged
+    public class PrincipalViewModel : ViewModelBase
     {
         private object _currentView;
 
         public ICommand NavigatePessoasCommand { get; }
         public ICommand NavigateProdutosCommand { get; }
         public ICommand NavigatePedidosCommand { get; }
+        public ICommand SairCommand { get; }
 
         // propriedade de ligação de tela
         public object CurrentView
@@ -39,6 +35,8 @@ namespace WpfApp.ViewModels
             NavigatePedidosCommand = new DelegateCommand(o => NavigateToPedidos());
             NavigatePessoasCommand = new DelegateCommand(o => NavigateToPessoas());
             NavigateProdutosCommand = new DelegateCommand(o => NavigateToProdutos());
+
+            SairCommand = new DelegateCommand(o => ExecuteSair());
         }
 
         // mudar de tela
@@ -61,16 +59,16 @@ namespace WpfApp.ViewModels
         private void NavigateToPedidos()
         {
             CurrentView = new PedidoViewModel(new Models.Pedido());
-
-            OnPropertyChanged(nameof(CurrentView));
         }
 
-        // aviso de mudança de propriedade
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
+        private static void ExecuteSair()
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            Window ownerWindow = Application.Current.MainWindow;
+
+            MessageBoxResult result = Mensagens.MensagemQuestionamentoConfirmacaoSair(ownerWindow);
+
+            if (result == MessageBoxResult.Yes)
+                Application.Current.Shutdown();
         }
     }
 }

@@ -28,9 +28,6 @@
         public const string ErroProdutoEmUso = "Produto está associado a um pedido e não pode ser removido.";
         public const string ErroDescricaoObrigatoria = "Descrição é obrigatória.";
 
-        //public const string ErroEstoqueInsuficiente = "Estoque insuficiente para o produto.";
-        //public const string ErroAtualizacaoEstoqueProduto = "Não foi possível atualizar o estoque do produto.";
-
         // Erros manipulacao pedidos
         public const string ErroPedidoNaoEncontrado = "Pedido não encontrado.";
         public const string ErroPessoaInexistente = "Pessoa associada ao pedido não existe.";
@@ -53,5 +50,9 @@
 
         // Erros de extensões
         public const string ErroTipoEnum = "O tipo fornecido deve ser um enum.";
+
+        //Mensagens gerais
+        public const string MensagemConfirmacaoSair = "Você tem certeza que deseja sair do aplicativo?";
+        public const string TituloMensagemConfirmacaoSair = "Confirmação de Saída";
     }
 }
