@@ -54,5 +54,9 @@
         //Mensagens gerais
         public const string MensagemConfirmacaoSair = "Você tem certeza que deseja sair do aplicativo?";
         public const string TituloMensagemConfirmacaoSair = "Confirmação de Saída";
+        public const string ErroRepositorioNaoIniciado = "_repository não foi inicializado.";
+        public const string MesnsagemListaDeveEstarVazia = "A lista deve estar vazia quando o arquivo não existe.";
+        public const string MensagemDeveRetornarDoisItens = "Deve retornar exatamente 2 itens.";
+        public const string ErroCaminhoTesteNaoInicializado = "O caminho de teste não foi inicializado corretamente.";
     }
 }

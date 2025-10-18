@@ -8,6 +8,14 @@ namespace WpfApp.Services
     {
         private readonly string _caminhoArquivo = Constantes.CaminhoArquivoItensPedido;
 
+        public ItensPedidoRepository(string? caminhoArquivo = null)
+        {
+            if (!string.IsNullOrEmpty(caminhoArquivo))
+            {
+                _caminhoArquivo = caminhoArquivo;
+            }
+        }
+
         // 1. Obtem todos os itens do pedido
         public async Task<List<ItensPedido>> GetAllItensPedidoAsync()
         {
