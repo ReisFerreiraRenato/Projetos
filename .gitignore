@@ -1,0 +1,6 @@
+﻿################################################################################
+# Este arquivo .gitignore foi criado automaticamente pelo Microsoft(R) Visual Studio.
+################################################################################
+
+/WpfApp/WpfApp.Test/bin/Debug/net8.0-windows
+/WpfApp/WpfApp.Test/obj/Debug
